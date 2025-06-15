@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+/* CSSファイルの一番上に追加 */
+/*余計な余白を削除*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*共通部分*/
+.font-english{
+    font-family: "Playfair Display", serif;
+}
+.font-japanese{
+    font-family: "Noto Sans JP", sans-serif;
+}
+.body-index{
+    background-color:black;
+}
+
+/*ヘッダー*/
+.header {
+    padding: 1rem;
+    position: relative;      /* ロゴを中央に配置するため */
+}
+.header-text {
+    text-align: left;
+    font-style: italic;
+}
+.header p {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding-top:2rem;
+}
+.header h1 {
+    color: #ffffff;
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.header-logo {
+    position: absolute;/* ロゴを中央に絶対配置 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.header-logo img {
+    height: 200px;
+    width: auto;
+}
+
+/*エンター*/
+.enter-body {
+    background-image: url("../images/gold_pearl_enter_背景.png");
+    background-size: cover;           /* 画面にフィット */
+    background-repeat: no-repeat;     /* 繰り返さない */
+    background-position: center center; /* 中央に表示 */
+    background-attachment: fixed;     /* オプション：スクロールしても背景固定 */
+}
+.enter-or-exit {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 15rem;
+    padding:0;
+}
+.enter, .exit {
+    width: 200px; /* ← 固定幅を指定して揃える */
+}
+.enter a,
+.exit a{
+    display: block;
+    padding: 0.5rem; /* 横paddingをなくして中央揃えに */
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 1px;
+    width: 100%; /* 親の固定幅に合わせてボタンが同じ幅になる */
+}
+.below-button{
+    text-align: center;
+    color:rgb(97, 85, 2);
+    font-size:small;
+    padding-top:1rem;
+}
+
+/*メニュータブ*/
+.select-menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5つの均等なカラム */
+    background-color: rgb(154, 11, 137);
+    width: 100%;
+    margin-top:2rem;
+}
+.select-menu div {
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+.select-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+}
+
+/*インデックス*/
+.main-content-system,
+.main-content {
+    background-color: #ffffff;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 4px solid rgb(154, 11, 137); /* ← 一括でスタイル・色・幅を指定 */
+}
+.main-content-top{
+    color:rgb(154, 11, 137);
+    text-align:center;
+}
+.main-content-red-p{
+    color:red;
+    margin:0;
+    text-align: center;
+    margin-bottom:2rem;
+}
+.content-image {
+    max-width: 100%;    /* 枠からはみ出さないようにする */
+    height: auto;       /* 縦横比を保持 */
+    display: block;     /* 中央揃えのためにブロック要素化 */
+    margin: 0 auto;     /* 中央に配置 */
+    border-radius: 2px; /* 角丸にしてmainと統一感を出す（任意） */
+    border:1px solid rgb(0, 0, 0);
+    margin-bottom: 1.5rem;
+}
+/*アクセス*/
+.access-top{
+    text-align: center;
+}
+.access{
+    margin-top:1rem;
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px;
+    border-width: 2px;
+}
+.access h1,
+.access h2{
+    padding-top: 1rem;;
+    text-align: center;
+    color:#ffffff
+}
+.access li{
+    list-style: none;
+    text-decoration: underline;
+    text-align: center;
+    padding:0.3rem;
+    color:#ffffff
+}
+.main-content .access iframe{
+    max-width:100%;
+    width:100%;
+    height:100% auto;
+    align-items: center;
+    margin-top:2rem;
+}
+
+/*料金システム*/
+.main-content-system{
+    background-color: #ffffff; 
+    max-width: 960px;
+    border-radius: 16px;
+    border: 4px solid rgb(154, 11, 137); /* ← 一括でスタイル・色・幅を指定 */
+}
+.main-system-top{
+    color:black;
+    text-align: center;
+    align-items: center;
+    max-width: 100%;
+    margin:3.5rem
+}
+.system-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左を固定幅、右を可変 */
+    align-items: center;
+    gap: 1rem;       /* グリッドの隙間 */
+    margin-top:1rem;
+}
+.price,
+.plan{
+    margin:0;
+    padding: 0;
+}
+.plan{
+    margin-left:200px;
+}
+.price p,
+.plan p{
+    margin:0;
+    text-align: left;
+    padding:0.5rem;
+    font-size: 20px;
+}
+.member-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 1rem;       /* グリッドの隙間 */
+    margin-top:3rem;
+}
+.member-description{
+    margin-left:3rem;
+    text-align: left;
+}
+.member-description li{
+    padding:0.5rem;
+}
+.member-description p{
+    margin-top:0.5rem;
+    font-size:85%;
+}
+.alfard{
+    margin:0;
+    padding: 0;
+    width:400px;
+    height:auto;
+    
+}
+
+/*ランキング*/
+.main-content-ranking{
+    background-color: #ffffff;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 4px solid rgb(154, 11, 137); 
+}
+.ranking-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:5rem;
+}
+.ranking-grid img-container {
+    width: 400px;
+    height: 600px;        /* 表示領域の高さ制限 */
+    overflow: hidden;     /* 超えた部分を隠す */
+}
+.ranking-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.main-content-ranking h3{
+    color:red;
+    color:rgb(237, 91, 91)
+}
+.profile-label{
+    color:white;
+    background-color: purple;
+    margin:0.5rem;
+    padding :0;
+    text-align: center;
+}
+.ranking-grid p{
+    padding-left:1rem;
+}
+
+/*イベント*/
+.event-top{
+    text-align: center;
+    margin:3rem;
+    font-size: 50px;
+}
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+.event-grid div {
+    text-align: center;
+}
+.event-grid img {
+    width: 100%;
+    max-width: 600px;  /* お好みで調整 */
+    height: auto;     /* 固定高さにすることで統一感を出す */
+}
+
+
+/*パスワード*/
+.password-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+
+/* スマートフォン用レスポンシブ対応 */
+@media (max-width: 800px) {
+    .header{
+        margin:3rem;
+    }
+    .header-text{
+        display:none;
+    }
+    .header-logo img {
+        height: 100px;
+    }
+    .select-menu {
+        grid-template-columns: 1fr 1fr;
+        font-size: 1rem;
+    }
+    .select-menu div {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+    .main-content,
+    .main-content-system,
+    .main-content-ranking {
+        max-width: 98vw;
+        padding: 1rem;
+    }
+    .system-grid,
+    .member-grid,
+    .ranking-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .plan {
+        margin-left: 0;
+    }
+    .alfard {
+        width: 100%;
+        max-width: 100vw;
+    }
+    .ranking-grid img-container {
+        width: 100%;
+        height: auto;
+    }
+    .enter-or-exit {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 6rem;
+    }
+    .enter, .exit {
+        width: 90vw;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .content-image {
+        max-width: 100%;
+        margin-left: 0.5rem;
+    }
+    .main-system-top {
+        margin: 1.5rem 0;
+    }
+    .access {
+        padding: 0.5rem;
+    }
+    .password-main {
+        min-height: 40vh;
+        padding: 1rem;
+    }
+}
+    .member-description {   height: auto;
+    }
